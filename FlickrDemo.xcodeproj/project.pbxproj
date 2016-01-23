@@ -181,6 +181,7 @@
 			children = (
 				B869FEDB1C53E05500DD7CE5 /* AppDelegates */,
 				B869FED61C53E01A00DD7CE5 /* FlickrImages */,
+				B869FEFD1C541F6600DD7CE5 /* ThirdParty */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,6 +243,13 @@
 				B869FEDD1C53E05500DD7CE5 /* AppDelegate.m */,
 			);
 			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		B869FEFD1C541F6600DD7CE5 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		CEA92C8D28B39E8C3A453268 /* Frameworks */ = {

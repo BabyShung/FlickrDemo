@@ -91,21 +91,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="csr-dP-F4t">
-                                <rect key="frame" x="40" y="144" width="520" height="312"/>
+                                <rect key="frame" x="40" y="20" width="520" height="312"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="312" id="EQg-8X-LEi"/>
                                     <constraint firstAttribute="width" secondItem="csr-dP-F4t" secondAttribute="height" multiplier="5:3" id="pgh-3Q-YvX"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pgh-3Q-YvX"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="top" secondItem="WUB-pI-RCy" secondAttribute="bottom" id="3Kq-us-wz9"/>
                             <constraint firstItem="csr-dP-F4t" firstAttribute="centerY" secondItem="Flo-Q7-vTQ" secondAttribute="centerY" id="FZ3-ot-U9H"/>
                             <constraint firstItem="csr-dP-F4t" firstAttribute="centerX" secondItem="Flo-Q7-vTQ" secondAttribute="centerX" id="a7o-NK-CQq"/>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="leading" secondItem="Flo-Q7-vTQ" secondAttribute="leadingMargin" constant="20" id="ea7-hZ-8qm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="csr-dP-F4t" secondAttribute="trailing" constant="20" id="j82-oO-hcU"/>
                             <constraint firstItem="csr-dP-F4t" firstAttribute="leading" secondItem="Flo-Q7-vTQ" secondAttribute="leadingMargin" constant="20" id="oSO-yI-hJn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FZ3-ot-U9H"/>
+                                <exclude reference="oSO-yI-hJn"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="csr-dP-F4t" id="ple-iR-u8Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaG-6G-DrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

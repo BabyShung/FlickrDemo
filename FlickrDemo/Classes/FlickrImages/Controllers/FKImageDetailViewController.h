@@ -10,4 +10,6 @@
 
 @interface FKImageDetailViewController : FKBaseViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end

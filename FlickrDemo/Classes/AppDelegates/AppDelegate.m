@@ -20,7 +20,7 @@
     
     
     
-    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"" sharedSecret:@""];
+    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"4a5a0506c56c06bdf1f7b3e49f1c46aa" sharedSecret:@"7d84880a1cd7c6ea"];
     
     return YES;
 }

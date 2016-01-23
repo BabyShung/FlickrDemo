@@ -16,12 +16,6 @@
 
 @implementation FKImageListViewController (CollectionView)
 
-- (void)setupFlowLayout
-{
-    FKImageListFlowLayout *layout = self.collectionView.collectionViewLayout;
-    
-}
-
 #pragma mark - Delegates
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -36,6 +30,12 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.photos.count;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FKImageDetailViewController"];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - FlowLayout

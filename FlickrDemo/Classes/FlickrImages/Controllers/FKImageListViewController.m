@@ -20,7 +20,6 @@
 {
     [super viewDidLoad];
     
-    
     [self loadURLsFromFlickr];
     
 }
@@ -34,25 +33,9 @@
 
 - (void)loadURLsFromFlickr
 {
-//    FlickrKit *fk = [FlickrKit sharedFlickrKit];
-//    FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
-//    [fk call:interesting completion:^(NSDictionary *response, NSError *error) {
-//        // Note this is not the main thread!
-//        if (response) {
-//            NSMutableArray *photoURLs = [NSMutableArray array];
-//            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-//                NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-//                [photoURLs addObject:url];
-//            }
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                // Any GUI related operations here
-//            });
-//        }   
-//    }];
-    
     
     [[FlickrKit sharedFlickrKit] call:@"flickr.interestingness.getList"
-                                 args:@{@"format": @"rest", @"extras": @"url_m", @"api_key": @"4cba999f343e0eb30035b1eaf37c6076"}
+                                 args:@{@"format": @"rest", @"extras": @"url_m", @"api_key": @"4a5a0506c56c06bdf1f7b3e49f1c46aa"}
                           maxCacheAge:FKDUMaxAgeOneHour
                            completion:^(NSDictionary *response, NSError *error)
      {
