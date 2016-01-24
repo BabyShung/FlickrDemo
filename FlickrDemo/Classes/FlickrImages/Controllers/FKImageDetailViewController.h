@@ -10,6 +10,9 @@
 
 @interface FKImageDetailViewController : FKBaseViewController
 
+@property (assign, nonatomic) CGFloat imageViewRatio;
+@property (strong, nonatomic) UIImage *currentImage;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

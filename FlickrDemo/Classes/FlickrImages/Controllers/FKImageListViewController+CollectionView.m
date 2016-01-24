@@ -11,6 +11,7 @@
 #import "FKImageListFlowLayout.h"
 #import "UIKit+AFNetworking.h"
 #import "FKImage.h"
+#import "FKImageDetailViewController.h"
 
 #define CELL_SPACING 10.f
 
@@ -34,7 +35,15 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FKImageDetailViewController"];
+    FKImageListCollectionViewCell *cell = (FKImageListCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    FKImage *image = self.photos[indexPath.row];
+    NSLog(@"image.size.width:  %f",image.size.width);
+    NSLog(@"image.size.height:  %f",image.size.height);
+    CGFloat ratio = image.size.width / image.size.height;
+    NSLog(@"ratio:  %f",ratio);
+    FKImageDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FKImageDetailViewController"];
+    detailVC.imageViewRatio = ratio;
+    detailVC.currentImage = cell.imageView.image;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -48,7 +57,7 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake(CELL_SPACING, CELL_SPACING, CELL_SPACING, CELL_SPACING);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -63,7 +72,21 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnCountForSection:(NSInteger)section
 {
-    return 2;
+    return UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? 2 : 1;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+ heightForHeaderInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+ heightForFooterInSection:(NSInteger)section
+{
+    return 0;
 }
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import "FKImageListViewController.h"
-#import "FlickrKit.h"
-#import "FKImage.h"
+#import "FKImageListViewController+FlickrApis.h"
 
 @interface FKImageListViewController ()
+
 
 @end
 
@@ -22,6 +22,7 @@
     
     [self loadURLsFromFlickr];
     
+    [self setupDefaults];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,38 +32,15 @@
 
 #pragma mark - private
 
-- (void)loadURLsFromFlickr
+- (void)setupDefaults
 {
-    
-    [[FlickrKit sharedFlickrKit] call:@"flickr.interestingness.getList"
-                                 args:@{@"format": @"rest", @"extras": @"url_m", @"api_key": @"4a5a0506c56c06bdf1f7b3e49f1c46aa"}
-                          maxCacheAge:FKDUMaxAgeOneHour
-                           completion:^(NSDictionary *response, NSError *error)
-     {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (response) {
-                NSMutableArray *photos = [NSMutableArray array];
-                for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-                    NSString *title = [photoData valueForKey:@"title"];
-                    CGFloat width = [[photoData valueForKey:@"width_m"] floatValue];
-                    CGFloat height = [[photoData valueForKey:@"height_m"] floatValue];
-                    NSURL *url = [NSURL URLWithString:[photoData valueForKey:@"url_m"]];
-                    FKImage *image = [[FKImage alloc] initWithSize:CGSizeMake(width, height)
-                                                             title:title url:url];
-                    [photos addObject:image];
-                }
-                self.photos = photos;
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    // Any GUI related operations here
-                    [self.collectionView reloadData];
-                });
-            } else {
-                // show the error
-                NSLog(@"xx  %@", error.description);
-            }
-        });
-    }];
+    self.title = NSLocalizedString(@"FlickrDemo", @"FlickrDemo");
+//    [self.collectionView addSubview:self.refreshControll];
+}
+
+- (void)refresh
+{
+    [self loadURLsFromFlickr];
 }
 
 #pragma mark - Getters
@@ -74,5 +52,14 @@
     }
     return _photos;
 }
+
+//- (UIRefreshControl *)refreshControll
+//{
+//    if (!_refreshControll) {
+//        _refreshControll = [[UIRefreshControl alloc] init];
+//        [_refreshControll addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+//    }
+//    return _refreshControll;
+//}
 
 @end

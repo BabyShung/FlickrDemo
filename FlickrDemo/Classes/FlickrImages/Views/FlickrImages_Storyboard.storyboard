@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nx1-pa-YxV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nx1-pa-YxV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Image List View Controller-->
@@ -20,8 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jNc-mK-Jhe">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="dBA-lo-vJp" customClass="FKImageListFlowLayout"/>
                                 <cells>
@@ -34,13 +35,10 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNf-Pf-iFI">
                                                     <rect key="frame" x="0.0" y="0.0" width="226" height="167"/>
-                                                    <animations/>
                                                 </imageView>
                                             </subviews>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="vNf-Pf-iFI" firstAttribute="top" secondItem="nXE-Q8-ZkL" secondAttribute="top" id="7Ge-hS-wqp"/>
@@ -60,14 +58,19 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jNc-mK-Jhe" secondAttribute="trailing" id="DOM-aR-DhK"/>
-                            <constraint firstItem="jNc-mK-Jhe" firstAttribute="top" secondItem="Y8d-ZJ-w5M" secondAttribute="bottom" id="scu-Na-4Ry"/>
+                            <constraint firstItem="jNc-mK-Jhe" firstAttribute="top" secondItem="HqL-3D-Xlj" secondAttribute="topMargin" id="aPS-08-nev"/>
+                            <constraint firstItem="jNc-mK-Jhe" firstAttribute="topMargin" secondItem="Y8d-ZJ-w5M" secondAttribute="bottom" id="scu-Na-4Ry"/>
                             <constraint firstItem="jNc-mK-Jhe" firstAttribute="leading" secondItem="HqL-3D-Xlj" secondAttribute="leading" id="tbo-1X-cpJ"/>
                             <constraint firstItem="vxs-hJ-tWD" firstAttribute="top" secondItem="jNc-mK-Jhe" secondAttribute="bottom" id="v1r-ev-k7O"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="scu-Na-4Ry"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="0dE-JK-sxO"/>
                     <connections>
@@ -91,33 +94,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="csr-dP-F4t">
-                                <rect key="frame" x="40" y="20" width="520" height="312"/>
-                                <animations/>
+                                <rect key="frame" x="30" y="40" width="540" height="324"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="312" id="EQg-8X-LEi"/>
-                                    <constraint firstAttribute="width" secondItem="csr-dP-F4t" secondAttribute="height" multiplier="5:3" id="pgh-3Q-YvX"/>
+                                    <constraint firstAttribute="width" secondItem="csr-dP-F4t" secondAttribute="height" multiplier="5:3" placeholder="YES" id="pIr-Sz-Rh7"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="pgh-3Q-YvX"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="csr-dP-F4t" firstAttribute="top" secondItem="WUB-pI-RCy" secondAttribute="bottom" id="3Kq-us-wz9"/>
-                            <constraint firstItem="csr-dP-F4t" firstAttribute="centerY" secondItem="Flo-Q7-vTQ" secondAttribute="centerY" id="FZ3-ot-U9H"/>
-                            <constraint firstItem="csr-dP-F4t" firstAttribute="centerX" secondItem="Flo-Q7-vTQ" secondAttribute="centerX" id="a7o-NK-CQq"/>
-                            <constraint firstItem="csr-dP-F4t" firstAttribute="leading" secondItem="Flo-Q7-vTQ" secondAttribute="leadingMargin" constant="20" id="ea7-hZ-8qm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="csr-dP-F4t" secondAttribute="trailing" constant="20" id="j82-oO-hcU"/>
-                            <constraint firstItem="csr-dP-F4t" firstAttribute="leading" secondItem="Flo-Q7-vTQ" secondAttribute="leadingMargin" constant="20" id="oSO-yI-hJn"/>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="centerX" secondItem="Flo-Q7-vTQ" secondAttribute="centerX" id="3QG-Fr-IUt"/>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="top" secondItem="WUB-pI-RCy" secondAttribute="bottom" constant="20" id="7eE-cr-bFB"/>
+                            <constraint firstItem="xZD-dx-Qds" firstAttribute="top" secondItem="csr-dP-F4t" secondAttribute="bottom" id="Que-Zy-WuD"/>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="top" secondItem="WUB-pI-RCy" secondAttribute="bottom" id="g7R-RD-Nmj"/>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="trailing" secondItem="Flo-Q7-vTQ" secondAttribute="centerX" multiplier="1.9" id="h0d-kn-8ld"/>
+                            <constraint firstItem="csr-dP-F4t" firstAttribute="leading" secondItem="Flo-Q7-vTQ" secondAttribute="centerX" multiplier="0.1" id="yeo-Wl-mXb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="FZ3-ot-U9H"/>
-                                <exclude reference="oSO-yI-hJn"/>
+                                <exclude reference="3QG-Fr-IUt"/>
+                                <exclude reference="g7R-RD-Nmj"/>
+                                <exclude reference="Que-Zy-WuD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="3QG-Fr-IUt"/>
+                                <exclude reference="7eE-cr-bFB"/>
+                                <include reference="g7R-RD-Nmj"/>
+                                <exclude reference="h0d-kn-8ld"/>
+                                <exclude reference="yeo-Wl-mXb"/>
+                                <include reference="Que-Zy-WuD"/>
                             </mask>
                         </variation>
                     </view>
@@ -137,7 +143,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fe8-d9-v1A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

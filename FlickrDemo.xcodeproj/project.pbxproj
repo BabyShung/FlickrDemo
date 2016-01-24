@@ -20,9 +20,10 @@
 		B869FEEC1C53E1C100DD7CE5 /* FKBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FEEB1C53E1C100DD7CE5 /* FKBaseCollectionViewCell.m */; };
 		B869FEEF1C53E1E300DD7CE5 /* FKImageListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FEEE1C53E1E300DD7CE5 /* FKImageListCollectionViewCell.m */; };
 		B869FEF21C53E28300DD7CE5 /* FKImageListViewController+CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FEF11C53E28300DD7CE5 /* FKImageListViewController+CollectionView.m */; };
-		B869FEF51C53E5FE00DD7CE5 /* FKKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FEF41C53E5FE00DD7CE5 /* FKKitUtils.m */; };
 		B869FEF81C53E96C00DD7CE5 /* FKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FEF71C53E96C00DD7CE5 /* FKImage.m */; };
 		B869FEFB1C53EBC000DD7CE5 /* FKImageListFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FEFA1C53EBC000DD7CE5 /* FKImageListFlowLayout.m */; };
+		B869FF0A1C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.m in Sources */ = {isa = PBXBuildFile; fileRef = B869FF091C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.m */; };
+		B8EA2CBD1C54446800853642 /* AlarmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EA2CBC1C54446800853642 /* AlarmAlertView.m */; };
 		E0B2BA40F26D7AB9FF4FD41B /* libPods-FlickrDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E34BA755DCFA64B4A746D37 /* libPods-FlickrDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -73,12 +74,14 @@
 		B869FEEE1C53E1E300DD7CE5 /* FKImageListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKImageListCollectionViewCell.m; sourceTree = "<group>"; };
 		B869FEF01C53E28300DD7CE5 /* FKImageListViewController+CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FKImageListViewController+CollectionView.h"; sourceTree = "<group>"; };
 		B869FEF11C53E28300DD7CE5 /* FKImageListViewController+CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FKImageListViewController+CollectionView.m"; sourceTree = "<group>"; };
-		B869FEF31C53E5FE00DD7CE5 /* FKKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKKitUtils.h; sourceTree = "<group>"; };
-		B869FEF41C53E5FE00DD7CE5 /* FKKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKKitUtils.m; sourceTree = "<group>"; };
 		B869FEF61C53E96C00DD7CE5 /* FKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKImage.h; sourceTree = "<group>"; };
 		B869FEF71C53E96C00DD7CE5 /* FKImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKImage.m; sourceTree = "<group>"; };
 		B869FEF91C53EBC000DD7CE5 /* FKImageListFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKImageListFlowLayout.h; sourceTree = "<group>"; };
 		B869FEFA1C53EBC000DD7CE5 /* FKImageListFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKImageListFlowLayout.m; sourceTree = "<group>"; };
+		B869FF081C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FKImageListViewController+FlickrApis.h"; sourceTree = "<group>"; };
+		B869FF091C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FKImageListViewController+FlickrApis.m"; sourceTree = "<group>"; };
+		B8EA2CBB1C54446800853642 /* AlarmAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmAlertView.h; sourceTree = "<group>"; };
+		B8EA2CBC1C54446800853642 /* AlarmAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +184,6 @@
 			children = (
 				B869FEDB1C53E05500DD7CE5 /* AppDelegates */,
 				B869FED61C53E01A00DD7CE5 /* FlickrImages */,
-				B869FEFD1C541F6600DD7CE5 /* ThirdParty */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 				B869FED71C53E01A00DD7CE5 /* Controllers */,
 				B869FED81C53E01A00DD7CE5 /* Models */,
 				B869FED91C53E01A00DD7CE5 /* Views */,
+				B8EA2CBA1C54446800853642 /* Utils */,
 			);
 			path = FlickrImages;
 			sourceTree = "<group>";
@@ -205,6 +208,8 @@
 				B869FEE51C53E18D00DD7CE5 /* FKImageListViewController.m */,
 				B869FEF01C53E28300DD7CE5 /* FKImageListViewController+CollectionView.h */,
 				B869FEF11C53E28300DD7CE5 /* FKImageListViewController+CollectionView.m */,
+				B869FF081C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.h */,
+				B869FF091C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.m */,
 				B869FEE71C53E19900DD7CE5 /* FKImageDetailViewController.h */,
 				B869FEE81C53E19900DD7CE5 /* FKImageDetailViewController.m */,
 			);
@@ -214,8 +219,6 @@
 		B869FED81C53E01A00DD7CE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B869FEF31C53E5FE00DD7CE5 /* FKKitUtils.h */,
-				B869FEF41C53E5FE00DD7CE5 /* FKKitUtils.m */,
 				B869FEF61C53E96C00DD7CE5 /* FKImage.h */,
 				B869FEF71C53E96C00DD7CE5 /* FKImage.m */,
 				B869FEF91C53EBC000DD7CE5 /* FKImageListFlowLayout.h */,
@@ -245,11 +248,13 @@
 			path = AppDelegates;
 			sourceTree = "<group>";
 		};
-		B869FEFD1C541F6600DD7CE5 /* ThirdParty */ = {
+		B8EA2CBA1C54446800853642 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B8EA2CBB1C54446800853642 /* AlarmAlertView.h */,
+				B8EA2CBC1C54446800853642 /* AlarmAlertView.m */,
 			);
-			path = ThirdParty;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CEA92C8D28B39E8C3A453268 /* Frameworks */ = {
@@ -330,6 +335,7 @@
 				TargetAttributes = {
 					B869FE9E1C53155D00DD7CE5 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 4B6J56772J;
 					};
 					B869FEB71C53155D00DD7CE5 = {
 						CreatedOnToolsVersion = 7.1;
@@ -448,10 +454,11 @@
 				B869FEA41C53155D00DD7CE5 /* main.m in Sources */,
 				B869FEE91C53E19900DD7CE5 /* FKImageDetailViewController.m in Sources */,
 				B869FEEF1C53E1E300DD7CE5 /* FKImageListCollectionViewCell.m in Sources */,
-				B869FEF51C53E5FE00DD7CE5 /* FKKitUtils.m in Sources */,
+				B8EA2CBD1C54446800853642 /* AlarmAlertView.m in Sources */,
 				B869FEF21C53E28300DD7CE5 /* FKImageListViewController+CollectionView.m in Sources */,
 				B869FEE31C53E16800DD7CE5 /* FKBaseViewController.m in Sources */,
 				B869FEFB1C53EBC000DD7CE5 /* FKImageListFlowLayout.m in Sources */,
+				B869FF0A1C542D7900DD7CE5 /* FKImageListViewController+FlickrApis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,10 +592,13 @@
 			baseConfigurationReference = 0BD5188340D5B070629CE72C /* Pods-FlickrDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlickrDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.planhola.FlickrDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -597,10 +607,13 @@
 			baseConfigurationReference = A26B548B93848CD576C7CBD6 /* Pods-FlickrDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlickrDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.planhola.FlickrDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
