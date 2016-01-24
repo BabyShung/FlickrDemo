@@ -14,9 +14,14 @@
 @implementation FKImageListViewController (FlickrApis)
 
 - (void)loadURLsFromFlickr
-{    
-    [[FlickrKit sharedFlickrKit] call:@"flickr.interestingness.getList"
-                                 args:@{@"format": @"rest", @"extras": @"url_m", @"api_key": @"4a5a0506c56c06bdf1f7b3e49f1c46aa"}
+{
+    FlickrKit *singleton = [FlickrKit sharedFlickrKit];
+    [singleton call:@"flickr.interestingness.getList"
+                                 args:@{
+                                        @"format": @"rest",
+                                        @"extras": @"url_m",
+                                        @"api_key": singleton.apiKey
+                                        }
                           maxCacheAge:FKDUMaxAgeOneHour
                            completion:^(NSDictionary *response, NSError *error)
      {
